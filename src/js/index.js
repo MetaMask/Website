@@ -1,7 +1,24 @@
 var ModelViewer = require('metamask-logo')
+var detect = require('detect-browser').detect
 var isMobile = !!detectMobile()
 
+showCorrectButton()
 injectMascot()
+
+function showCorrectButton(){
+  const browser = detect()
+
+  typeof window.web3 // Touching the web3 object to trigger Brave prompting to install.
+
+  switch (browser.name) {
+    case 'firefox':
+      var link = document.querySelector('#install-button')
+      var firefoxLink = 'https://addons.mozilla.org/en-US/firefox/addon/ether-metamask/'
+      link.innerText = 'Get Firefox Addon'
+      link.href = firefoxLink
+      break
+  }
+}
 
 function injectMascot(){
   // get container from DOM
