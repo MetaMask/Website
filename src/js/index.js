@@ -10,6 +10,7 @@ function showCorrectButton(){
 
   typeof window.web3 // Touching the web3 object to trigger Brave prompting to install.
 
+  console.log('browser', browser)
   switch (browser.name) {
     case 'firefox':
       var link = document.querySelector('#install-button')
@@ -17,6 +18,13 @@ function showCorrectButton(){
       link.innerText = 'Get Firefox Addon'
       link.href = firefoxLink
       break
+    case 'opera':
+      var link = document.querySelector('#install-button')
+      var operaLink = 'https://addons.opera.com/en/extensions/details/metamask/'
+      link.innerText = 'Get Opera Extension'
+      link.href = operaLink
+      break
+
   }
 }
 
