@@ -3,20 +3,20 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  margin-top: 14px;
+  margin-top: 0px;
   width: 100%;
 
   li {
     float: left;
     display: flex;
-    width: 33%;
+    width: 50%;
     justify-content: space-around;
   }
 
   li a {
       color: white;
       text-align: center;
-      padding: 16px;
+      padding: 10px;
       text-decoration: none;
   }
 }
