@@ -8,7 +8,8 @@ injectMascot()
 function showCorrectButton(){
   const browser = detect()
 
-  typeof window.web3 // Touching the web3 object to trigger Brave prompting to install.
+  // Touch the web3 object to trigger Brave install prompt
+  typeof window.web3
 
   console.log('browser', browser)
   switch (browser.name) {
@@ -24,7 +25,6 @@ function showCorrectButton(){
       link.innerText = 'Get Opera Extension'
       link.href = operaLink
       break
-
   }
 }
 
