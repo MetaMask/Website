@@ -11,21 +11,29 @@ function showCorrectButton(){
   // Touch the web3 object to trigger Brave install prompt
   typeof window.web3
 
-  console.log('browser', browser)
   switch (browser.name) {
+
     case 'firefox':
-      var link = document.querySelector('#install-button')
       var firefoxLink = 'https://addons.mozilla.org/en-US/firefox/addon/ether-metamask/'
-      link.innerText = 'Get Firefox Addon'
-      link.href = firefoxLink
+      updateDownloadLinks('Get Firefox Addon', firefoxLink)
+
       break
+
     case 'opera':
-      var link = document.querySelector('#install-button')
       var operaLink = 'https://addons.opera.com/en/extensions/details/metamask/'
-      link.innerText = 'Get Opera Extension'
-      link.href = operaLink
+      updateDownloadLinks('Get Opera Extension', operaLink)
       break
+
   }
+}
+
+function updateDownloadLinks(text, url){
+  var navLink = document.querySelector('#nav-install-button')
+  navLink.innerText = text
+  navLink.href = url
+  var mainLink = document.querySelector('#main-install-button')
+  mainLink.innerText = text
+  mainLink.href = url
 }
 
 function injectMascot(){
