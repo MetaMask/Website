@@ -23,22 +23,22 @@
     "node-static": "^0.7.7"
   },
   "devDependencies": {
-    "rimraf": "^2.5.2",
-    "sass-css-stream": "^0.1.6",
-    "watchify": "^3.7.0",
     "ap": "^0.2.0",
     "async": "^2.0.0-rc.6",
     "browserify": "^13.0.1",
     "fs": "0.0.2",
     "fs-extra": "^1.0.0",
-    "metamask-logo": "^2.0.0",
-    "mississippi": "^1.2.0",
     "gulp-batch": "^1.0.5",
     "gulp-browser": "^3.0.2",
     "gulp-concat": "^2.6.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.6",
-    "run-sequence": "^1.2.0"
+    "metamask-logo": "^2.0.0",
+    "mississippi": "^1.2.0",
+    "rimraf": "^2.5.2",
+    "run-sequence": "^1.2.0",
+    "sass-css-stream": "^0.1.6",
+    "watchify": "^3.11.0"
   }
 }
