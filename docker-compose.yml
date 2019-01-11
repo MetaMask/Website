@@ -1,8 +1,9 @@
 landing:
+  container_name: metamasklanding_landing
   build: ./
   restart: always
   ports:
-    - "9000:9000"
+    - "9000"
   environment:
     VIRTUAL_PORT: "9000"
     VIRTUAL_HOST: "metamask.io"
