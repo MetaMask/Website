@@ -1,5 +1,5 @@
-landing:
-  container_name: metamasklanding_landing
+website:
+  container_name: metamask_website
   build: ./
   restart: always
   ports:
