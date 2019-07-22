@@ -3,9 +3,9 @@ website:
   build: ./
   restart: always
   ports:
-    - "9000"
+    - "8080"
   environment:
-    VIRTUAL_PORT: "9000"
+    VIRTUAL_PORT: "8080"
     VIRTUAL_HOST: "metamask.io"
     LETSENCRYPT_HOST: "metamask.io"
     LETSENCRYPT_EMAIL: "admin@metamask.io"
