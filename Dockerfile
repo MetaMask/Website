@@ -11,7 +11,6 @@ RUN npm install --production
 
 # copy over app dir
 COPY ./dist /www/dist
-COPY ./server.js /www/
 
 # start server
 CMD npm start
