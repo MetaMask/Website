@@ -16,4 +16,4 @@ COPY ./dist /www/dist
 CMD npm start
 
 # expose server
-EXPOSE 9000
+EXPOSE 8080
