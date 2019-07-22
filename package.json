@@ -4,7 +4,7 @@
   "description": "MetaMask Landing Page",
   "main": "index.html",
   "scripts": {
-    "start": "node server.js",
+    "start": "static dist",
     "build": "node build.js",
     "deploy": "npm run build && docker-compose pull && docker-compose build && docker-compose stop && docker-compose up -d && docker-compose logs --tail 200"
   },
@@ -19,8 +19,7 @@
   },
   "homepage": "https://github.com/MetaMask/landing#readme",
   "dependencies": {
-    "detect-browser": "^2.0.0",
-    "node-static": "^0.7.7"
+    "detect-browser": "^2.0.0"
   },
   "devDependencies": {
     "ap": "^0.2.0",
@@ -36,6 +35,7 @@
     "gulp-watch": "^5.0.1",
     "metamask-logo": "^2.0.0",
     "mississippi": "^1.2.0",
+    "node-static": "^0.7.11",
     "rimraf": "^2.5.2",
     "run-sequence": "^1.2.0",
     "sass-css-stream": "^0.1.6",
