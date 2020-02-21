@@ -27,7 +27,7 @@ function start(cb){
 }
 
 function clean(cb){
-  fsExtra.remove('./dist/', cb)
+  fsExtra.remove('./docs/', cb)
 }
 
 function build(cb){
@@ -49,7 +49,7 @@ function buildJs(cb) {
   browserify.on('update', bundle)
 
   async.series({
-    buildJsPrep: bind(fsExtra.mkdirs, './dist/js'),
+    buildJsPrep: bind(fsExtra.mkdirs, './docs/js'),
     buildJsStart: start,
   }, cb)
 
@@ -62,7 +62,7 @@ function buildJs(cb) {
     console.log('bundle')
     return Streams.pipeline(
       browserify.bundle(),
-      fs.createWriteStream('./dist/js/bundle.js')
+      fs.createWriteStream('./docs/js/bundle.js')
     )
   }
 }
@@ -70,7 +70,7 @@ function buildJs(cb) {
 function buildCss(cb) {
 
   async.series({
-    buildCssPrep: bind(fsExtra.mkdirs, './dist/css'),
+    buildCssPrep: bind(fsExtra.mkdirs, './docs/css'),
     buildCssStart: start,
   }, cb)
 
@@ -78,7 +78,7 @@ function buildCss(cb) {
     var pipeline = Streams.pipeline(
       fs.createReadStream( './src/css/index.scss' ),
       sassStream( './src/css/index.scss' ),
-      fs.createWriteStream( './dist/css/bundle.css' )
+      fs.createWriteStream( './docs/css/bundle.css' )
     )
     Streams.finished(pipeline, cb)
   }
@@ -87,18 +87,18 @@ function buildCss(cb) {
 function buildStatic(cb) {
 
   async.parallel({
-    imgs:           bind(fsExtra.copy, './src/img/', './dist/img/'),
-    faviconAndroid: bind(fsExtra.copy, './src/manifest.json', './dist/manifest.json'),
-    faviconIE:      bind(fsExtra.copy, './src/browserconfig.xml', './dist/browserconfig.xml'),
-    fonts:          bind(fsExtra.copy, './src/fonts/', './dist/fonts/'),
-    index:          bind(fsExtra.copy, './src/index.html', './dist/index.html'),
-    privacy:        bind(fsExtra.copy, './src/privacy.html', './dist/privacy.html'),
-    terms:          bind(fsExtra.copy, './src/terms.html', './dist/terms.html'),
-    phishing:       bind(fsExtra.copy, './src/phishing.html', './dist/phishing.html'),
-    attributions:   bind(fsExtra.copy, './src/attributions.html', './dist/attributions.html'),
+    imgs:           bind(fsExtra.copy, './src/img/', './docs/img/'),
+    faviconAndroid: bind(fsExtra.copy, './src/manifest.json', './docs/manifest.json'),
+    faviconIE:      bind(fsExtra.copy, './src/browserconfig.xml', './docs/browserconfig.xml'),
+    fonts:          bind(fsExtra.copy, './src/fonts/', './docs/fonts/'),
+    index:          bind(fsExtra.copy, './src/index.html', './docs/index.html'),
+    privacy:        bind(fsExtra.copy, './src/privacy.html', './docs/privacy.html'),
+    terms:          bind(fsExtra.copy, './src/terms.html', './docs/terms.html'),
+    phishing:       bind(fsExtra.copy, './src/phishing.html', './docs/phishing.html'),
+    attributions:   bind(fsExtra.copy, './src/attributions.html', './docs/attributions.html'),
 
 
-    goog:           bind(fsExtra.copy, './src/google3bfcd95a7b5008a9.html', './dist/google3bfcd95a7b5008a9.html'),
+    goog:           bind(fsExtra.copy, './src/google3bfcd95a7b5008a9.html', './docs/google3bfcd95a7b5008a9.html'),
   }, cb)
 
 }

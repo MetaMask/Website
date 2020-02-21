@@ -4,7 +4,7 @@
   "description": "MetaMask Landing Page",
   "main": "index.html",
   "scripts": {
-    "start": "static dist -a 0.0.0.0",
+    "start": "static docs -a 0.0.0.0",
     "build": "node build.js",
     "deploy": "npm run build && docker-compose pull && docker-compose build && docker-compose stop && docker-compose up -d && docker-compose logs --tail 200"
   },
