@@ -1,5 +1,5 @@
-# MetaMask Landing Page
-
+# Amazing MetaMask Landing Page
+# here is the guide to install , build and serve 
 To install: `npm install`
 
 To build: `npm run build`
