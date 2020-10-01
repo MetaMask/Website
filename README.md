@@ -1,4 +1,4 @@
-# MetaMask Landing Page
+# MetaMask Landing Page - Project that everybody needs.
 
 To install: `npm install`
 
